@@ -4,9 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        counter=Counter(nums)
-        n=len(nums)
-        for key,value in counter.items():
-            if value>n/2:
-                return key
+        max_element=0
+        freq=0
+        for i in range(len(nums)):
+            if freq==0:
+                max_element=nums[i]
+            if max_element==nums[i]:
+                freq=freq+1
+            else:
+                freq=freq-1
+        return max_element
         
