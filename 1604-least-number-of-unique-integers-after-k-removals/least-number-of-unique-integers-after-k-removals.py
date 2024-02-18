@@ -1,16 +1,18 @@
 class Solution:
     def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
-        mp = collections.Counter(arr)
-        v = list(mp.values())
-        cnt = 0
-        v.sort()
-        for i in range(len(v)):
-            if k > v[i]:
-                k -= v[i]
-                v[i] = 0
+        mapp=Counter(arr)
+        freq_list=list(mapp.values())
+        freq_list.sort()
+        count=0
+        for i in range(len(freq_list)):
+            if freq_list[i]>k:
+                freq_list[i]=freq_list[i]-k
+                k=0
             else:
-                v[i] -= k
-                k = 0
-            if v[i] != 0:
-                cnt += 1
-        return cnt
+                k=k-freq_list[i]
+                freq_list[i]=0
+            if freq_list[i]!=0:
+                count=count+1
+        return count
+
+        
