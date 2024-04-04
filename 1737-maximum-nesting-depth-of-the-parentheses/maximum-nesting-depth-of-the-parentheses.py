@@ -4,13 +4,9 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        res=[]
-        for char in s:
-            if char =="(" or char==")":
-                res.append(char)
         count=0
         max_depth=0
-        for brac in res:
+        for brac in s:
             if brac == "(":
                 count=count+1
                 if count>max_depth:
