@@ -12,7 +12,7 @@ class Solution(object):
         for point in points:
             start=point[0]
             end=point[1]
-            if start>last:
+            if last<start:
                 ans=ans+1
                 last=end
         return ans
