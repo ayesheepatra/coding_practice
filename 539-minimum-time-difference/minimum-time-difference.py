@@ -13,6 +13,8 @@ class Solution:
             curr = min_list[i+1]
             prev = min_list[i]
             diff = curr - prev
+            if res == 0:
+                return 0
             res = min(res, diff)
         return res
 
